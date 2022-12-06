@@ -18,6 +18,7 @@ mongoose.connect('mongodb+srv://HUGO:770609@cluster0.1didmkd.mongodb.net/?retryW
 //Ajouter header aux toutes reponses afin que tous les utilisateurs peuvent accèder à l'API avec des méthodes pré-définies
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Cross-Origin-Resource-Policy', 'same-site');    
     res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content, Accept, Content-Type, Authorization');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
     next();
