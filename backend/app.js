@@ -3,13 +3,15 @@ const userRoutes = require('./routes/user');
 const sauceRoutes = require('./routes/sauce');
 const path = require('path');
 const mongoose = require('mongoose');
+require('dotenv').config();
 
 const app = express();
 
 app.use(express.json()); 
 
 //Connecter à la base de donnée mmongodb
-mongoose.connect('mongodb+srv://HUGO:770609@cluster0.1didmkd.mongodb.net/?retryWrites=true&w=majority',
+const mongoString = process.env.DATABASE_URL;
+mongoose.connect(mongoString,
   { useNewUrlParser: true,
     useUnifiedTopology: true })
   .then(() => console.log('Connexion à MongoDB réussie !'))

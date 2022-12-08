@@ -1,6 +1,7 @@
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const User = require ('../models/User');
+require('dotenv').config();
 
 //Sécurier le mot de passe, enregistrer l'identifiant  et le mont de passe crypté dans la base de donnée
 exports.signup = (req, res, next) => {
@@ -33,7 +34,7 @@ exports.login = (req, res, next) => {
                         userId: user._id,
                         token: jwt.sign(
                             { userId: user._id },
-                            'RANDOM_TOKEN_SECRET',
+                            process.env.ACCESS_SECRET_TOKEN,
                             { expiresIn: '24h' }
                         )
                     });

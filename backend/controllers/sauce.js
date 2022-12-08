@@ -38,7 +38,7 @@ exports.getOneSauce = (req, res, next) => {
   );
 };
 
-//Modifier une sauce dans la base de donnée suite à la demande de client
+//Modifier une sauce suite à la demande de client
 exports.modifySauce = (req, res, next) => {
   const sauceObject = req.file ? {
     ...JSON.parse(req.body.sauce),
