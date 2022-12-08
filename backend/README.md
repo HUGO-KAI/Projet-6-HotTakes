@@ -1,7 +1,7 @@
 
 # OPENCLASSROOMS-DEV WEB-PROJET 6
 
-Construire une API sécurisée pour une application d'avis gastronomiques -- PIIQUANTE
+<h3>--Construire une API sécurisée pour une application d'avis gastronomiques -- PIIQUANTE</h3>
 
 
 ## Authors
@@ -16,19 +16,20 @@ souhaite créer une application web dans laquelle les utilisateurs peuvent ajout
 leurs sauces préférées et liker ou disliker les sauces ajoutées par les autres.
 
 ## Pré-requis
--sass
--node js
+- sass</br>
+- Javascript</br>
+- node js
 
 ## Installation
 - Clonez le repository
 
-## démarrage
--Front end
+## Démarrage
+<h3>- Front end</h3>
 1. Ouvrez un terminal (Linux/Mac) ou une invite de commande/PowerShell
-(Windows)
-2. Exécutez npm install à partir du répertoire du projet
+(Windows)</br>
+2. Exécutez npm install à partir du répertoire du projet</br>
 3. Exécutez npm start
 
--Back end
-1. Exécutez npm install à partir du dossier 'backend'
+<h3>- Back end</h3>
+1. Exécutez npm install à partir du dossier 'backend'</br>
 2. Exécutez npm start ou nodemon server
