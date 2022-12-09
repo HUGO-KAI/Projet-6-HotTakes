@@ -3,11 +3,15 @@ const userRoutes = require('./routes/user');
 const sauceRoutes = require('./routes/sauce');
 const path = require('path');
 const mongoose = require('mongoose');
+const helmet = require('helmet')
+const mongoSanitize = require('express-mongo-sanitize')
 require('dotenv').config();
 
 const app = express();
 
 app.use(express.json()); 
+app.use(mongoSanitize());
+app.use(helmet());
 
 //Connecter à la base de donnée mmongodb
 const mongoString = process.env.DATABASE_URL;
