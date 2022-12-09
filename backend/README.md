@@ -18,19 +18,23 @@ leurs sauces préférées et liker ou disliker les sauces ajoutées par les autr
 ## Pré-requis
 - sass</br>
 - Javascript</br>
-- node js
+- node.js
 
 ## Installation
 - Clonez le repository
 
 ## Démarrage
-<h3>- Front end</h3>
-1. Ouvrez un terminal (Linux/Mac) ou une invite de commande/PowerShell
-(Windows)</br>
-2. Exécutez npm install à partir du répertoire du projet</br>
-3. Exécutez npm start
-
-<h3>- Back end</h3>
-1. Exécutez npm install à partir du dossier 'backend'</br>
-2. Renommez .env-sample à .env</br>
-3. Exécutez npm start ou nodemon server
+<h3>- Frontend</h3>
+<ul>
+  <li>Ouvrez un terminal (Linux/Mac) ou une invite de commande/PowerShell
+(Windows)</br></li>
+<li>Exécutez npm install à partir du répertoire du projet</br></li>
+<li>Exécutez npm start</li>
+<li>Le Front-end de ce project est généré avec [Angular CLI] version 13.2.4.</br> Utilisez le URL http://localhost:4200/ pour visualiser en navigateur</li>
+</ul>
+<h3>- Backend</h3>
+<ul>
+<li>Exécutez npm install à partir du dossier 'backend'</br></li>
+<li>Renommez .env-sample à .env</br></li>
+<li>Exécutez npm start ou nodemon server</li>
+</ul>
