@@ -32,4 +32,5 @@ leurs sauces préférées et liker ou disliker les sauces ajoutées par les autr
 
 <h3>- Back end</h3>
 1. Exécutez npm install à partir du dossier 'backend'</br>
-2. Exécutez npm start ou nodemon server
+2. Renommez .env-sample à .env</br>
+3. Exécutez npm start ou nodemon server
