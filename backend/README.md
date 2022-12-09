@@ -16,7 +16,7 @@ souhaite créer une application web dans laquelle les utilisateurs peuvent ajout
 leurs sauces préférées et liker ou disliker les sauces ajoutées par les autres.
 
 ## Pré-requis
-- sass</br>
+- Sass</br>
 - Javascript</br>
 - Node.js
 
