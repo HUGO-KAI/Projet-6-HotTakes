@@ -18,7 +18,7 @@ leurs sauces préférées et liker ou disliker les sauces ajoutées par les autr
 ## Pré-requis
 - sass</br>
 - Javascript</br>
-- node.js
+- Node.js
 
 ## Installation
 - Clonez le repository
