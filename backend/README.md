@@ -16,9 +16,9 @@ souhaite créer une application web dans laquelle les utilisateurs peuvent ajout
 leurs sauces préférées et liker ou disliker les sauces ajoutées par les autres.
 
 ## Pré-requis
-- sass</br>
+- Sass</br>
 - Javascript</br>
-- node.js
+- Node.js
 
 ## Installation
 - Clonez le repository
@@ -35,6 +35,6 @@ leurs sauces préférées et liker ou disliker les sauces ajoutées par les autr
 <h3> - Backend </h3>
 <ul>
 <li>Exécutez npm install à partir du dossier 'backend'</br></li>
-<li>Renommez .env-sample à .env</br></li>
+<li>Prennez l'expemple de .env-sample et créer un fichier .env en mettant les valeurs</br></li>
 <li>Exécutez npm start ou nodemon server</li>
 </ul>
