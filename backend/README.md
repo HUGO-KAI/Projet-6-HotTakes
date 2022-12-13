@@ -26,8 +26,7 @@ leurs sauces préférées et liker ou disliker les sauces ajoutées par les autr
 ## Démarrage
 <h3> - Frontend </h3>
 <ul>
-  <li>Ouvrez un terminal (Linux/Mac) ou une invite de commande/PowerShell
-(Windows)</li>
+<li>Ouvrez un terminal (Linux/Mac) ou une invite de commande/PowerShell(Windows)</li>
 <li>Exécutez npm install à partir du répertoire du projet</li>
 <li>Exécutez npm start</li>
 <li>Le Front-end de ce project est généré avec [Angular CLI] version 13.2.4.</br> Utilisez le URL http://localhost:4200/ pour visualiser en navigateur</li>
