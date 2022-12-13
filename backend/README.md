@@ -1,4 +1,3 @@
-
 # OPENCLASSROOMS-DEV WEB-PROJET 6
 
 <h3>--Construire une API sécurisée pour une application d'avis gastronomiques -- PIIQUANTE</h3>
@@ -26,15 +25,15 @@ leurs sauces préférées et liker ou disliker les sauces ajoutées par les autr
 ## Démarrage
 <h3> - Frontend </h3>
 <ul>
-  <li>Ouvrez un terminal (Linux/Mac) ou une invite de commande/PowerShell
-(Windows)</br></li>
-<li>Exécutez npm install à partir du répertoire du projet</br></li>
+<li>Ouvrez un terminal (Linux/Mac) ou une invite de commande/PowerShell(Windows)</li>
+<li>Exécutez npm install à partir du répertoire du projet</li>
 <li>Exécutez npm start</li>
 <li>Le Front-end de ce project est généré avec [Angular CLI] version 13.2.4.</br> Utilisez le URL http://localhost:4200/ pour visualiser en navigateur</li>
 </ul>
 <h3> - Backend </h3>
 <ul>
-<li>Exécutez npm install à partir du dossier 'backend'</br></li>
-<li>Prennez l'expemple de .env-sample et créer un fichier .env en mettant les valeurs</br></li>
+<li>Exécutez npm install à partir du dossier 'backend'</li>
+<li>Prennez l'expemple de .env-sample et créer un fichier .env en mettant les valeurs</li>
+<li>Créez un dossier 'images' dans le dossier 'backend' s'il en existe pas</li>
 <li>Exécutez npm start ou nodemon server</li>
 </ul>
