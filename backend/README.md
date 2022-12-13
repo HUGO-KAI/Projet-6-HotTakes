@@ -36,5 +36,6 @@ leurs sauces préférées et liker ou disliker les sauces ajoutées par les autr
 <ul>
 <li>Exécutez npm install à partir du dossier 'backend'</br></li>
 <li>Prennez l'expemple de .env-sample et créer un fichier .env en mettant les valeurs</br></li>
+<li>Créez un dossier 'images' dans le dossier 'backend' s'il en existe pas</br></li>
 <li>Exécutez npm start ou nodemon server</li>
 </ul>
