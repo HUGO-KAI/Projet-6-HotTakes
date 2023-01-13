@@ -1,27 +1,38 @@
 # HotTakes
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.4.
+### Projet: Construire une API sécurisée pour une application d'avis gastronomiques
+### Ma mission dans ce projet: 
+#### - Construire le back-end avec 
+<ul>
+<li> Node.js </li>
+<li> Express </li>
+<li> MongoDB </li>
+</ul>
 
-## Development server
+### Compétances pour ce projet:
+<ul>
+<li> Démarrer un server </li>
+<li> Construire une API REST </li>
+<li> Configurer la base de donnée </li>
+<li> Sécuriser le site contre cyberattaque </li>
+</ul>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Installation
+- Clonez le repository
 
-## Code scaffolding
+### Démarrage
+<h3> - Frontend </h3>
+<ul>
+<li>Ouvrez un terminal (Linux/Mac) ou une invite de commande/PowerShell(Windows)</li>
+<li>Exécutez npm install à partir du répertoire du projet</li>
+<li>Exécutez npm start</li>
+<li>Le Front-end de ce project est généré avec [Angular CLI] version 13.2.4.</br> Utilisez le URL http://localhost:4200/ pour visualiser en navigateur</li>
+</ul>
+<h3> - Backend </h3>
+<ul>
+<li>Exécutez npm install à partir du dossier 'backend'</li>
+<li>Prennez l'expemple de .env-sample et créer un fichier .env en mettant les valeurs</li>
+<li>Créez un dossier 'images' dans le dossier 'backend' s'il en existe pas</li>
+<li>Exécutez npm start ou nodemon server</li>
+</ul>
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
