@@ -98,7 +98,6 @@ export class SauceFormComponent implements OnInit {
     if (this.mode === 'new') {
       this.sauces.createSauce(newSauce, this.sauceForm.get('image')!.value).pipe(
         tap(({ message }) => {
-          console.log(message);
           this.loading = false;
           this.router.navigate(['/sauces']);
         }),
@@ -112,7 +111,6 @@ export class SauceFormComponent implements OnInit {
     } else if (this.mode === 'edit') {
       this.sauces.modifySauce(this.sauce._id, newSauce, this.sauceForm.get('image')!.value).pipe(
         tap(({ message }) => {
-          console.log(message);
           this.loading = false;
           this.router.navigate(['/sauces']);
         }),

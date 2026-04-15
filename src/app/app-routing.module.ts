@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'signup', component: SignupComponent },
   { path: 'login', component: LoginComponent },
   { path: 'sauces', component: SauceListComponent, canActivate: [AuthGuard] },
-  { path: 'sauce/:id', component: SingleSauceComponent, canActivate: [AuthGuard] },
+  { path: 'sauce/:id', component: SingleSauceComponent},
   { path: 'new-sauce', component: SauceFormComponent, canActivate: [AuthGuard] },
   { path: 'modify-sauce/:id', component: SauceFormComponent, canActivate: [AuthGuard] },
   { path: '', pathMatch: 'full', redirectTo: 'sauces'},

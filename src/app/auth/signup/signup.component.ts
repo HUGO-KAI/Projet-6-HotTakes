@@ -9,16 +9,18 @@ import { catchError, EMPTY, switchMap, tap } from 'rxjs';
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.scss']
 })
-export class SignupComponent implements OnInit {
 
+export class SignupComponent implements OnInit {
+  isFocused!:boolean;
+  showPassword!: boolean;
   signupForm!: FormGroup;
   loading!: boolean;
-  errorMsg!: string;
+  errors: string[] = [];
 
   constructor(private formBuilder: FormBuilder,
               private auth: AuthService,
               private router: Router) { }
-
+    
   ngOnInit() {
     this.signupForm = this.formBuilder.group({
       email: [null, [Validators.required, Validators.email]],
@@ -28,6 +30,8 @@ export class SignupComponent implements OnInit {
 
   onSignup() {
     this.loading = true;
+    this.showPassword = false;
+    this.isFocused = false;
     const email = this.signupForm.get('email')!.value;
     const password = this.signupForm.get('password')!.value;
     this.auth.createUser(email, password).pipe(
@@ -36,12 +40,18 @@ export class SignupComponent implements OnInit {
         this.loading = false;
         this.router.navigate(['/sauces']);
       }),
-      catchError(error => {
+      catchError(res => {
+        console.log(res.error)    
         this.loading = false;
-        this.errorMsg = error.message;
+        for(const err of res.error){
+          this.errors.push(err.message)
+        }    
         return EMPTY;
       })
     ).subscribe();
   }
 
+  onTogglePassword() {
+    this.showPassword = !this.showPassword;
+  }
 }

@@ -127,9 +127,23 @@
             ],
             "scripts": []
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
   },
-  "defaultProject": "hot-takes"
+  "defaultProject": "hot-takes",
+  "cli": {
+    "schematicCollections": [
+      "angular-eslint"
+    ]
+  }
 }

@@ -1,13 +1,24 @@
 <mat-spinner *ngIf="loading"></mat-spinner>
 <form [formGroup]="signupForm" *ngIf="!loading">
-  <div class="form-group">
+  <div class="form-group mb-2">
     <label for="email">Email</label>
     <input type="email" class="form-control" id="email" formControlName="email">
   </div>
-  <div class="form-group">
-    <label for="password">Password</label>
-    <input type="password" class="form-control" id="password" formControlName="password">
+  <div class="field-container mb-2">
+    <label for="Password">Password</label>
+    <div class="password-group-wrapper" [class.focused]="isFocused">
+      <input [type]="showPassword ? 'text' : 'password'" id="password" formControlName="password" placeholder=""
+        (focus)="isFocused = true" (blur)="isFocused = false" />
+
+      <button type="button" (click)="onTogglePassword()">
+        <span>{{ showPassword ? '🙈' : '👁️' }}</span>
+      </button>
+    </div>
   </div>
   <button mat-raised-button color="primary" [disabled]="signupForm.invalid" (click)="onSignup()">SIGN UP</button>
-  <p class="text-danger" *ngIf="errorMsg">{{ errorMsg }}</p>
+  <ul *ngIf="errors && errors.length > 0" class="error-messages text-danger">
+    <li *ngFor="let error of errors">
+      {{ error }}
+    </li>
+  </ul>
 </form>

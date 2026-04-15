@@ -7,12 +7,14 @@
     <h3>Description</h3>
     <p>{{ sauce.description }}</p>
     <div class="like-buttons" *ngIf="!likePending">
-      <div class="likes">
-        <i [ngClass]="{ 'fas liked': liked, 'far': !liked, 'disabled': disliked }" class="like fa-thumbs-up fa-lg" (click)="onLike()"></i>
+      <div class="likes" *ngIf="userId">
+        <i [ngClass]="{ 'fas liked': liked, 'far': !liked, 'disabled': disliked }" class="like fa-thumbs-up fa-lg"
+          (click)="onLike()"></i>
         <span>{{ sauce.likes }}</span>
       </div>
-      <div class="dislikes">
-        <i [ngClass]="{ 'fas disliked': disliked, 'far': !disliked, 'disabled': liked }" class="dislike fa-thumbs-down fa-lg" (click)="onDislike()"></i>
+      <div class="dislikes" *ngIf="userId">
+        <i [ngClass]="{ 'fas disliked': disliked, 'far': !disliked, 'disabled': liked }"
+          class="dislike fa-thumbs-down fa-lg" (click)="onDislike()"></i>
         <span>{{ sauce.dislikes }}</span>
       </div>
     </div>
