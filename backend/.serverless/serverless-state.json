@@ -8,6 +8,24 @@
       "name": "aws",
       "runtime": "nodejs16.x",
       "region": "eu-west-3",
+      "httpApi": {
+        "cors": {
+          "allowedOrigins": [
+            "*"
+          ],
+          "allowedHeaders": [
+            "Content-Type",
+            "Authorization"
+          ],
+          "allowedMethods": [
+            "GET",
+            "POST",
+            "PUT",
+            "DELETE"
+          ],
+          "allowCredentials": false
+        }
+      },
       "stage": "dev",
       "versionFunctions": true,
       "compiledCloudFormationTemplate": {
@@ -174,7 +192,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/hot-takes-backend/dev/1778440765614-2026-05-10T19:19:25.614Z/hot-takes-backend.zip"
+                "S3Key": "serverless/hot-takes-backend/dev/1778441579465-2026-05-10T19:32:59.465Z/hot-takes-backend.zip"
               },
               "Handler": "app.handler",
               "Runtime": "nodejs16.x",
@@ -192,21 +210,36 @@
               "ApiLogGroup"
             ]
           },
-          "ApiLambdaVersionKFo5vqS8SMwx2BwjKwxAgGv6RqDX597p2xxlzbQ": {
+          "ApiLambdaVersionvZTGD9fu2qGd8CAaDNxclSfsZTz9dq7BPfS8PQ9XwaM": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "ApiLambdaFunction"
               },
-              "CodeSha256": "VDALNGSIKUW9mpYVH5vdWVoiIRrwAgBVXugjPZIM7i4="
+              "CodeSha256": "c/xW5ifkYzPXXwomLcBI6a0Ku89K4R/oHwPCvKJOozM="
             }
           },
           "HttpApi": {
             "Type": "AWS::ApiGatewayV2::Api",
             "Properties": {
               "Name": "dev-hot-takes-backend",
-              "ProtocolType": "HTTP"
+              "ProtocolType": "HTTP",
+              "CorsConfiguration": {
+                "AllowHeaders": [
+                  "Content-Type",
+                  "Authorization"
+                ],
+                "AllowMethods": [
+                  "GET",
+                  "POST",
+                  "PUT",
+                  "DELETE"
+                ],
+                "AllowOrigins": [
+                  "*"
+                ]
+              }
             }
           },
           "HttpApiStage": {
@@ -307,7 +340,7 @@
           "ApiLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "ApiLambdaVersionKFo5vqS8SMwx2BwjKwxAgGv6RqDX597p2xxlzbQ"
+              "Ref": "ApiLambdaVersionvZTGD9fu2qGd8CAaDNxclSfsZTz9dq7BPfS8PQ9XwaM"
             },
             "Export": {
               "Name": "sls-hot-takes-backend-dev-ApiLambdaFunctionQualifiedArn"
@@ -449,7 +482,7 @@
         "timeout": 6,
         "runtime": "nodejs16.x",
         "vpc": {},
-        "versionLogicalId": "ApiLambdaVersionKFo5vqS8SMwx2BwjKwxAgGv6RqDX597p2xxlzbQ"
+        "versionLogicalId": "ApiLambdaVersionvZTGD9fu2qGd8CAaDNxclSfsZTz9dq7BPfS8PQ9XwaM"
       }
     },
     "configValidationMode": "warn",
@@ -468,7 +501,7 @@
     "artifact": "E:\\dev\\Projet-6-HotTakes\\backend\\.serverless\\hot-takes-backend.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/hot-takes-backend/dev/1778440765614-2026-05-10T19:19:25.614Z",
+    "artifactDirectoryName": "serverless/hot-takes-backend/dev/1778441579465-2026-05-10T19:32:59.465Z",
     "artifact": "hot-takes-backend.zip"
   }
 }

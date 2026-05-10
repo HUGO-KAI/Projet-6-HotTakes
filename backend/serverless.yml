@@ -4,6 +4,22 @@ provider:
   name: aws
   runtime: nodejs16.x
   region: eu-west-3
+  httpApi:
+    # Allow cors
+    cors:
+      allowedOrigins:
+        - "https://master.d3vqdfieddfmm4.amplifyapp.com" # Allow front-end domain name for practice project
+      allowedHeaders:
+        - Content-Type
+        - Authorization
+      allowedMethods:
+        - GET
+        - POST
+        - PUT
+        - DELETE
+        - OPTIONS
+      allowCredentials: false
+      maxAge: 600 # Save Preflight for 10 minutes
 
 functions:
   api:
