@@ -1,0 +1,13 @@
+service: hot-takes-backend
+
+provider:
+  name: aws
+  runtime: nodejs16.x
+  region: eu-west-3
+
+functions:
+  api:
+    # module.exports.handler dans app.js
+    handler: app.handler
+    events:
+      - httpApi: "*"
