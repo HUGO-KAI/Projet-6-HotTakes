@@ -63,6 +63,23 @@ export class LoginComponent implements OnInit {
     ).subscribe();
   }
 
+  guestLogin() {
+    this.loading = true;
+    const email = "user1@gmail.com";
+    const password = "User123456";
+    this.auth.loginUser(email, password).pipe(
+      tap(() => {
+        this.loading = false;
+        this.router.navigate(['/sauces']);
+      }),
+      catchError(res => {
+        this.loading = false;
+        this.errorMsg = res.error.message;
+        return EMPTY;
+      })
+    ).subscribe();
+  }
+
   onTogglePassword() {
     this.showPassword = !this.showPassword;
   }

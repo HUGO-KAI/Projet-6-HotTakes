@@ -125,7 +125,18 @@ export class SauceFormComponent implements OnInit {
   }
 
   onFileAdded(event: Event) {
-    const file = (event.target as HTMLInputElement).files![0];
+    const input = event.target as HTMLInputElement;
+    if (!input.files || input.files.length === 0) return;
+    const file = input.files[0];
+    const maxSize = 1 * 1024 * 1024;
+    if (file.size > maxSize) {
+      alert('The image is too large, please select a file smaller than 1MB.');
+      input.value = '';
+      this.sauceForm.get('image')!.setValue(null);
+      this.imagePreview = '';
+      return;
+    }
+    //const file = (event.target as HTMLInputElement).files![0];
     this.sauceForm.get('image')!.setValue(file);
     this.sauceForm.updateValueAndValidity();
     const reader = new FileReader();

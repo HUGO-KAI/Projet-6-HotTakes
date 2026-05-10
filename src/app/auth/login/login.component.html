@@ -3,7 +3,6 @@
   <div class="form-group">
     <label for="email">Email</label>
     <input type="email" class="form-control" id="email" formControlName="email">
-    <p class="explication">test account: user1@gmail.com</p>
   </div>
   <div class="field-container mb-2">
     <label for="Password">Password</label>
@@ -14,9 +13,14 @@
         <span>{{ showPassword ? '🙈' : '👁️' }}</span>
       </button>
     </div>
-    <p class="explication">test password: User123456</p>
   </div>
-  <button mat-raised-button color="primary" [disabled]="loginForm.invalid" (click)="onLogin()">LOGIN</button>
+  <div>
+    <button mat-raised-button color="primary" [disabled]="loginForm.invalid" (click)="onLogin()">LOGIN</button>
+  </div>
+  <div class="line-gap">
+    <button mat-raised-button color="primary" (click)="guestLogin()">GUEST QUICK
+      LOGIN</button>
+  </div>
   <p class="text-danger" *ngIf="errorMsg">{{ errorMsg }}</p>
   <p *ngIf="loading">
     Loading the sauces ...
@@ -28,7 +32,7 @@
     <p class="list-title" *ngIf="!loading && sauces.length > 0">THE SAUCES</p>
     <div class="sauce-list" *ngIf="!loading && sauces.length  > 0">
       <div class="sauce-list-item" *ngFor="let sauce of sauces" (click)="onClickSauce(sauce._id)">
-        <img alt="Hot sauce bottle" [src]="sauce.imageUrl">
+        <img class="" alt="sauce image" [src]="sauce.imageUrl">
         <h4>{{ sauce.name | uppercase }}</h4>
         <p>Heat: {{ sauce.heat }}/10</p>
       </div>
