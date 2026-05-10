@@ -11,7 +11,7 @@
       "httpApi": {
         "cors": {
           "allowedOrigins": [
-            "*"
+            "https://master.d3vqdfieddfmm4.amplifyapp.com"
           ],
           "allowedHeaders": [
             "Content-Type",
@@ -21,9 +21,11 @@
             "GET",
             "POST",
             "PUT",
-            "DELETE"
+            "DELETE",
+            "OPTIONS"
           ],
-          "allowCredentials": false
+          "allowCredentials": false,
+          "maxAge": 600
         }
       },
       "stage": "dev",
@@ -192,7 +194,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/hot-takes-backend/dev/1778441579465-2026-05-10T19:32:59.465Z/hot-takes-backend.zip"
+                "S3Key": "serverless/hot-takes-backend/dev/1778442546372-2026-05-10T19:49:06.372Z/hot-takes-backend.zip"
               },
               "Handler": "app.handler",
               "Runtime": "nodejs16.x",
@@ -234,11 +236,13 @@
                   "GET",
                   "POST",
                   "PUT",
-                  "DELETE"
+                  "DELETE",
+                  "OPTIONS"
                 ],
                 "AllowOrigins": [
-                  "*"
-                ]
+                  "https://master.d3vqdfieddfmm4.amplifyapp.com"
+                ],
+                "MaxAge": 600
               }
             }
           },
@@ -501,7 +505,7 @@
     "artifact": "E:\\dev\\Projet-6-HotTakes\\backend\\.serverless\\hot-takes-backend.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/hot-takes-backend/dev/1778441579465-2026-05-10T19:32:59.465Z",
+    "artifactDirectoryName": "serverless/hot-takes-backend/dev/1778442546372-2026-05-10T19:49:06.372Z",
     "artifact": "hot-takes-backend.zip"
   }
 }

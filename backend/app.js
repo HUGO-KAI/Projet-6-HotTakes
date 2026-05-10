@@ -1,3 +1,4 @@
+const cors = require("cors");
 const express = require("express");
 const userRoutes = require("./routes/user");
 const sauceRoutes = require("./routes/sauce");
@@ -10,6 +11,7 @@ require("dotenv").config();
 const app = express();
 const serverless = require("serverless-http");
 
+app.use(cors());
 app.use(express.json());
 app.use(mongodbSanitize());
 app.use(helmet());
