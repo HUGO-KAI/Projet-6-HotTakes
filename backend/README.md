@@ -2,27 +2,34 @@
 
 <h3>--Construire une API sécurisée pour une application d'avis gastronomiques -- PIIQUANTE</h3>
 
-
 ## Authors
 
 - [@HUGO-KAI](https://github.com/HUGO-KAI)
 
-
 ## Contexte du projet
+
 Piiquante se dédie à la création de sauces épicées dont les recettes sont gardées
 secrètes. Pour tirer parti de son succès et générer davantage de buzz, l'entreprise
 souhaite créer une application web dans laquelle les utilisateurs peuvent ajouter
 leurs sauces préférées et liker ou disliker les sauces ajoutées par les autres.
 
 ## Pré-requis
+
 - Sass</br>
 - Javascript</br>
 - Node.js
 
+## Git branch
+
+- master pour aws
+- dev pour localhost
+
 ## Installation
+
 - Clonez le repository
 
 ## Démarrage
+
 <h3> - Frontend </h3>
 <ul>
 <li>Ouvrez un terminal (Linux/Mac) ou une invite de commande/PowerShell(Windows)</li>

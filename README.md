@@ -1,15 +1,19 @@
 # HotTakes
 
 ### Projet: Construire une API sécurisée pour une application d'avis gastronomiques
-### Ma mission dans ce projet: 
-#### - Construire le back-end avec 
+
+### Ma mission dans ce projet:
+
+#### - Construire le back-end avec
+
 <ul>
-<li> Node.js </li>
+<li> Node.js 16.14</li>
 <li> Express </li>
 <li> MongoDB </li>
 </ul>
 
 ### Compétances pour ce projet:
+
 <ul>
 <li> Démarrer un server </li>
 <li> Construire une API REST </li>
@@ -18,9 +22,11 @@
 </ul>
 
 ### Installation
+
 - Clonez le repository
 
 ### Démarrage
+
 <h4> - Frontend </h4>
 <ul>
 <li>Ouvrez un terminal (Linux/Mac) ou une invite de commande/PowerShell(Windows)</li>
@@ -35,4 +41,3 @@
 <li>Créez un dossier 'images' dans le dossier 'backend' s'il en existe pas</li>
 <li>Exécutez npm start ou nodemon server</li>
 </ul>
-

@@ -194,7 +194,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/hot-takes-backend/dev/1778442546372-2026-05-10T19:49:06.372Z/hot-takes-backend.zip"
+                "S3Key": "serverless/hot-takes-backend/dev/1778443658172-2026-05-10T20:07:38.172Z/hot-takes-backend.zip"
               },
               "Handler": "app.handler",
               "Runtime": "nodejs16.x",
@@ -212,14 +212,14 @@
               "ApiLogGroup"
             ]
           },
-          "ApiLambdaVersionvZTGD9fu2qGd8CAaDNxclSfsZTz9dq7BPfS8PQ9XwaM": {
+          "ApiLambdaVersionNEuaynvEzsV7qqNxI0b5jPJNvyuGv0fT7nxO01QtTQ": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "ApiLambdaFunction"
               },
-              "CodeSha256": "c/xW5ifkYzPXXwomLcBI6a0Ku89K4R/oHwPCvKJOozM="
+              "CodeSha256": "5BTj/y2y5CMJl5foUKAN3SFaFx0YiuH0sZZSpWtxWpY="
             }
           },
           "HttpApi": {
@@ -344,7 +344,7 @@
           "ApiLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "ApiLambdaVersionvZTGD9fu2qGd8CAaDNxclSfsZTz9dq7BPfS8PQ9XwaM"
+              "Ref": "ApiLambdaVersionNEuaynvEzsV7qqNxI0b5jPJNvyuGv0fT7nxO01QtTQ"
             },
             "Export": {
               "Name": "sls-hot-takes-backend-dev-ApiLambdaFunctionQualifiedArn"
@@ -486,7 +486,7 @@
         "timeout": 6,
         "runtime": "nodejs16.x",
         "vpc": {},
-        "versionLogicalId": "ApiLambdaVersionvZTGD9fu2qGd8CAaDNxclSfsZTz9dq7BPfS8PQ9XwaM"
+        "versionLogicalId": "ApiLambdaVersionNEuaynvEzsV7qqNxI0b5jPJNvyuGv0fT7nxO01QtTQ"
       }
     },
     "configValidationMode": "warn",
@@ -505,7 +505,7 @@
     "artifact": "E:\\dev\\Projet-6-HotTakes\\backend\\.serverless\\hot-takes-backend.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/hot-takes-backend/dev/1778442546372-2026-05-10T19:49:06.372Z",
+    "artifactDirectoryName": "serverless/hot-takes-backend/dev/1778443658172-2026-05-10T20:07:38.172Z",
     "artifact": "hot-takes-backend.zip"
   }
 }
