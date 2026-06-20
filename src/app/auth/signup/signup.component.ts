@@ -43,7 +43,9 @@ export class SignupComponent implements OnInit {
       catchError(res => {
         console.log(res.error)    
         this.loading = false;
-        this.errors.push(res.error.message)
+        for (const key in res.error) {
+          this.errors.push(res.error[key].message)
+        }        
         return EMPTY;
       })
     ).subscribe();

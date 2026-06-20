@@ -12,7 +12,7 @@ passwordSchema
   .has()
   .lowercase() // Must have lowercase letters
   .has()
-  .digits(2) // Must have two numbers
+  .digits() // Must have at least one number
   .has()
   .not()
   .spaces() // Should not have spaces

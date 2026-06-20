@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const crypto = require("crypto");
 const User = require("../models/User");
 const { DynamoDBClient } = require("@aws-sdk/client-dynamodb");

@@ -5,7 +5,9 @@ provider:
   runtime: nodejs20.x
   region: eu-west-3
   environment:
-    DB_URL: ${env:DB_URL}
+    # 1. 传给 Node.js 后端的环境变量（代码里用 process.env.USERS_TABLE 读取）
+    USERS_TABLE: hot-takes-users
+    SAUCES_TABLE: hot-takes-sauces
   httpApi:
     # Allow cors
     cors:
@@ -41,8 +43,8 @@ provider:
             - dynamodb:UpdateItem
             - dynamodb:DeleteItem
           Resource:
-            - "arn:aws:dynamodb:你的区域:你的账号ID:table/hot-takes-users"
-            - "arn:aws:dynamodb:你的区域:你的账号ID:table/hot-takes-sauces"
+            - "arn:aws:dynamodb:eu-west-3:390213010936:table/hot-takes-users"
+            - "arn:aws:dynamodb:eu-west-3:390213010936:table/hot-takes-sauces"
 
 functions:
   api:

@@ -6,8 +6,12 @@
     },
     "provider": {
       "name": "aws",
-      "runtime": "nodejs16.x",
+      "runtime": "nodejs20.x",
       "region": "eu-west-3",
+      "environment": {
+        "USERS_TABLE": "hot-takes-users",
+        "SAUCES_TABLE": "hot-takes-sauces"
+      },
       "httpApi": {
         "cors": {
           "allowedOrigins": [
@@ -26,6 +30,34 @@
           ],
           "allowCredentials": false,
           "maxAge": 600
+        }
+      },
+      "iam": {
+        "role": {
+          "statements": [
+            {
+              "Effect": "Allow",
+              "Action": [
+                "s3:PutObject",
+                "s3:GetObject"
+              ],
+              "Resource": "arn:aws:s3:::hot-takes-backend-s3-390213010936-eu-west-3-an/*"
+            },
+            {
+              "Effect": "Allow",
+              "Action": [
+                "dynamodb:PutItem",
+                "dynamodb:GetItem",
+                "dynamodb:Scan",
+                "dynamodb:UpdateItem",
+                "dynamodb:DeleteItem"
+              ],
+              "Resource": [
+                "arn:aws:dynamodb:eu-west-3:390213010936:table/hot-takes-users",
+                "arn:aws:dynamodb:eu-west-3:390213010936:table/hot-takes-sauces"
+              ]
+            }
+          ]
         }
       },
       "stage": "dev",
@@ -166,6 +198,12 @@
                             "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/hot-takes-backend-dev*:*:*"
                           }
                         ]
+                      },
+                      {
+                        "$ref": "$[\"service\"][\"provider\"][\"iam\"][\"role\"][\"statements\"][0]"
+                      },
+                      {
+                        "$ref": "$[\"service\"][\"provider\"][\"iam\"][\"role\"][\"statements\"][1]"
                       }
                     ]
                   }
@@ -194,13 +232,19 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/hot-takes-backend/dev/1778442546372-2026-05-10T19:49:06.372Z/hot-takes-backend.zip"
+                "S3Key": "serverless/hot-takes-backend/dev/1781966948630-2026-06-20T14:49:08.630Z/hot-takes-backend.zip"
               },
               "Handler": "app.handler",
-              "Runtime": "nodejs16.x",
+              "Runtime": "nodejs20.x",
               "FunctionName": "hot-takes-backend-dev-api",
               "MemorySize": 1024,
               "Timeout": 6,
+              "Environment": {
+                "Variables": {
+                  "USERS_TABLE": "hot-takes-users",
+                  "SAUCES_TABLE": "hot-takes-sauces"
+                }
+              },
               "Role": {
                 "Fn::GetAtt": [
                   "IamRoleLambdaExecution",
@@ -212,14 +256,14 @@
               "ApiLogGroup"
             ]
           },
-          "ApiLambdaVersionvZTGD9fu2qGd8CAaDNxclSfsZTz9dq7BPfS8PQ9XwaM": {
+          "ApiLambdaVersionR6i8AreuP4KrLlhKNP2huZo2P6cnbMPaLR06ntkynA": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "ApiLambdaFunction"
               },
-              "CodeSha256": "c/xW5ifkYzPXXwomLcBI6a0Ku89K4R/oHwPCvKJOozM="
+              "CodeSha256": "rQDOA/lWKaZ3EJaz70gYN9UQqYasvERZIuaeBJ38wdg="
             }
           },
           "HttpApi": {
@@ -344,7 +388,7 @@
           "ApiLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "ApiLambdaVersionvZTGD9fu2qGd8CAaDNxclSfsZTz9dq7BPfS8PQ9XwaM"
+              "Ref": "ApiLambdaVersionR6i8AreuP4KrLlhKNP2huZo2P6cnbMPaLR06ntkynA"
             },
             "Export": {
               "Name": "sls-hot-takes-backend-dev-ApiLambdaFunctionQualifiedArn"
@@ -484,9 +528,9 @@
         "package": {},
         "memory": 1024,
         "timeout": 6,
-        "runtime": "nodejs16.x",
+        "runtime": "nodejs20.x",
         "vpc": {},
-        "versionLogicalId": "ApiLambdaVersionvZTGD9fu2qGd8CAaDNxclSfsZTz9dq7BPfS8PQ9XwaM"
+        "versionLogicalId": "ApiLambdaVersionR6i8AreuP4KrLlhKNP2huZo2P6cnbMPaLR06ntkynA"
       }
     },
     "configValidationMode": "warn",
@@ -505,7 +549,7 @@
     "artifact": "E:\\dev\\Projet-6-HotTakes\\backend\\.serverless\\hot-takes-backend.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/hot-takes-backend/dev/1778442546372-2026-05-10T19:49:06.372Z",
+    "artifactDirectoryName": "serverless/hot-takes-backend/dev/1781966948630-2026-06-20T14:49:08.630Z",
     "artifact": "hot-takes-backend.zip"
   }
 }

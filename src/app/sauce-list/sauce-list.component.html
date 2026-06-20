@@ -1,7 +1,7 @@
 <mat-spinner *ngIf="loading"></mat-spinner>
 <ng-container *ngIf="sauces$ | async as sauces">
   <p *ngIf="!loading && sauces.length <= 0">
-    No sauces to display!
+    No sauces to display! Add your first sauce by clicking on the "Add Sauce" button in the navigation bar.
   </p>
   <p class="list-title" *ngIf="!loading && sauces.length > 0">THE SAUCES</p>
   <div class="sauce-list" *ngIf="!loading && sauces.length  > 0">

@@ -8,12 +8,20 @@
     <label for="Password">Password</label>
     <div class="password-group-wrapper" [class.focused]="isFocused">
       <input [type]="showPassword ? 'text' : 'password'" id="password" formControlName="password" placeholder=""
-        (focus)="isFocused = true" (blur)="isFocused = false" />
+        autocomplete="new-password" (focus)="isFocused = true" (blur)="isFocused = false" />
 
       <button type="button" (click)="onTogglePassword()">
         <span>{{ showPassword ? '🙈' : '👁️' }}</span>
       </button>
     </div>
+    <ul class="text-info fs-6">
+      <li>Minimum length 8</li>
+      <li>Maximum length 30</li>
+      <li>Must have uppercase letters</li>
+      <li>Must have lowercase letters</li>
+      <li>Must have at least one number</li>
+      <li>Should not have spaces</li>
+    </ul>
   </div>
   <button mat-raised-button color="primary" [disabled]="signupForm.invalid" (click)="onSignup()">SIGN UP</button>
   <ul *ngIf="errors && errors.length > 0" class="error-messages text-danger">
