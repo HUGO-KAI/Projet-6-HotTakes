@@ -7,16 +7,30 @@
     <h3>Description</h3>
     <p>{{ sauce.description }}</p>
     <div class="like-buttons" *ngIf="!likePending">
-      <div class="likes" *ngIf="userId">
+      <div class="likes" *ngIf="userId; else elseBlock">
         <i [ngClass]="{ 'fas liked': liked, 'far': !liked, 'disabled': disliked }" class="like fa-thumbs-up fa-lg"
           (click)="onLike()"></i>
         <span>{{ sauce.likes }}</span>
       </div>
-      <div class="dislikes" *ngIf="userId">
+      <ng-template #elseBlock>
+        <div class="likes">
+          <i [ngClass]="{ 'fas liked': liked, 'far': !liked, 'disabled': disliked }"
+            class="like fa-thumbs-up fa-lg"></i>
+          <span>{{ sauce.likes }}</span>
+        </div>
+      </ng-template>
+      <div class="dislikes" *ngIf="userId; else elseBlock2">
         <i [ngClass]="{ 'fas disliked': disliked, 'far': !disliked, 'disabled': liked }"
           class="dislike fa-thumbs-down fa-lg" (click)="onDislike()"></i>
         <span>{{ sauce.dislikes }}</span>
       </div>
+      <ng-template #elseBlock2>
+        <div class="dislikes">
+          <i [ngClass]="{ 'fas disliked': disliked, 'far': !disliked, 'disabled': liked }"
+            class="dislike fa-thumbs-down fa-lg"></i>
+          <span>{{ sauce.dislikes }}</span>
+        </div>
+      </ng-template>
     </div>
     <div class="like-pending" *ngIf="likePending">
       <mat-spinner class="white-spinner"></mat-spinner>

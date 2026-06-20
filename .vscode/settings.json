@@ -1,0 +1,7 @@
+{
+  "workbench.editor.preferredScheme": "unset",
+  "terminal.integrated.defaultProfile.windows": "Command Prompt", 
+  "browser-preview.enabled": false,
+  "simpleBrowser.api.enabled": false,
+  "workbench.browser.openLocalhostLinks": false
+}

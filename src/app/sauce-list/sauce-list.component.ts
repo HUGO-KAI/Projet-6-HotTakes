@@ -31,7 +31,7 @@ export class SauceListComponent implements OnInit {
         return of([]);
       })
     );
-    this.sauce.getSauces();
+    this.sauce.getUserSauces();
   }
 
   onClickSauce(id: string) {

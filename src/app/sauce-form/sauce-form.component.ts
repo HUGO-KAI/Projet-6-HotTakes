@@ -109,7 +109,7 @@ export class SauceFormComponent implements OnInit {
         })
       ).subscribe();
     } else if (this.mode === 'edit') {
-      this.sauces.modifySauce(this.sauce._id, newSauce, this.sauceForm.get('image')!.value).pipe(
+      this.sauces.modifySauce(this.sauce.id, newSauce, this.sauceForm.get('image')!.value).pipe(
         tap(({ message }) => {
           this.loading = false;
           this.router.navigate(['/sauces']);

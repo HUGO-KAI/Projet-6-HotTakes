@@ -50,7 +50,7 @@ export class SingleSauceComponent implements OnInit {
     this.likePending = true;
     this.sauce$.pipe(
       take(1),
-      switchMap((sauce: Sauce) => this.sauces.likeSauce(sauce._id, !this.liked).pipe(
+      switchMap((sauce: Sauce) => this.sauces.likeSauce(sauce.id, !this.liked).pipe(
         tap(liked => {
           this.likePending = false;
           this.liked = liked;
@@ -68,7 +68,7 @@ export class SingleSauceComponent implements OnInit {
     this.likePending = true;
     this.sauce$.pipe(
       take(1),
-      switchMap((sauce: Sauce) => this.sauces.dislikeSauce(sauce._id, !this.disliked).pipe(
+      switchMap((sauce: Sauce) => this.sauces.dislikeSauce(sauce.id, !this.disliked).pipe(
         tap(disliked => {
           this.likePending = false;
           this.disliked = disliked;
@@ -86,7 +86,7 @@ export class SingleSauceComponent implements OnInit {
   onModify() {
     this.sauce$.pipe(
       take(1),
-      tap(sauce => this.router.navigate(['/modify-sauce', sauce._id]))
+      tap(sauce => this.router.navigate(['/modify-sauce', sauce.id]))
     ).subscribe();
   }
 
@@ -94,7 +94,7 @@ export class SingleSauceComponent implements OnInit {
     this.loading = true;
     this.sauce$.pipe(
       take(1),
-      switchMap(sauce => this.sauces.deleteSauce(sauce._id)),
+      switchMap(sauce => this.sauces.deleteSauce(sauce.id)),
       tap(message => {
         console.log(message);
         this.loading = false;

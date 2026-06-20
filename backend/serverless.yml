@@ -2,8 +2,10 @@ service: hot-takes-backend
 
 provider:
   name: aws
-  runtime: nodejs16.x
+  runtime: nodejs20.x
   region: eu-west-3
+  environment:
+    DB_URL: ${env:DB_URL}
   httpApi:
     # Allow cors
     cors:
@@ -20,6 +22,27 @@ provider:
         - OPTIONS
       allowCredentials: false
       maxAge: 600 # Save Preflight for 10 minutes
+  iam:
+    role:
+      statements:
+        # S3 权限
+        - Effect: Allow
+          Action:
+            - s3:PutObject
+            - s3:GetObject
+          Resource:
+            - arn:aws:s3:::hot-takes-backend-s3-390213010936-eu-west-3-an/* # 限制只能对这个桶进行读写
+        # DynamoDB 两张表的权限
+        - Effect: Allow
+          Action:
+            - dynamodb:PutItem
+            - dynamodb:GetItem
+            - dynamodb:Scan
+            - dynamodb:UpdateItem
+            - dynamodb:DeleteItem
+          Resource:
+            - "arn:aws:dynamodb:你的区域:你的账号ID:table/hot-takes-users"
+            - "arn:aws:dynamodb:你的区域:你的账号ID:table/hot-takes-sauces"
 
 functions:
   api:

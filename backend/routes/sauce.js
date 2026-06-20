@@ -8,6 +8,7 @@ const sauceCtrl = require("../controllers/sauce");
 
 //Définir les routes des requêtes concernant les sauces
 router.get("/", sauceCtrl.getAllSauce);
+router.get("/getUserSauces", auth, sauceCtrl.getUserSauces);
 router.post("/", auth, multer, sauceCtrl.createSauce);
 router.get("/:id", sauceCtrl.getOneSauce);
 router.put("/:id", auth, multer, sauceCtrl.modifySauce);

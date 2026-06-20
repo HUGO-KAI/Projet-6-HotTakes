@@ -1,5 +1,5 @@
 export class Sauce {
-  _id!: string;
+  id!: string;
   name!: string;
   manufacturer!: string;
   description!: string;
