@@ -41,15 +41,14 @@ mongoose
   .catch(() => console.log("Connexion à MongoDB échouée !")); */
 
 // 模拟 S3 连接测试
-s3TestClient
+/* s3TestClient
   .send(new HeadBucketCommand({ Bucket: process.env.AWS_BUCKET_NAME }))
   .then(() => {
     console.log("Connexion à Amazon S3 réussie ! (Bucket accessible)");
   })
   .catch((err) => {
     console.log("Connexion à Amazon S3 échouée ! 请检查密钥或桶名称。");
-    // console.error(err); // 如果需要看具体错误可以取消注释
-  });
+  }); */
 //Ajouter header aux toutes reponses afin que tous les utilisateurs peuvent accèder à l'API avec des méthodes pré-définies
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");

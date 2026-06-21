@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SaucesService } from '../services/sauces.service';
-import { catchError, Observable, of, tap } from 'rxjs';
+import { catchError, Observable, of, tap, throwError } from 'rxjs';
 import { Sauce } from '../models/Sauce.model';
 import { Router } from '@angular/router';
 
@@ -15,23 +15,20 @@ export class SauceListComponent implements OnInit {
   loading!: boolean;
   errorMsg!: string;
 
-  constructor(private sauce: SaucesService,
+  constructor(private SaucesService: SaucesService,
               private router: Router) { }
 
   ngOnInit() {
     this.loading = true;
-    this.sauces$ = this.sauce.sauces$.pipe(
-      tap(() => {
-        this.loading = false;
-        this.errorMsg = '';
-      }),
-      catchError(error => {
-        this.errorMsg = JSON.stringify(error);
-        this.loading = false;
-        return of([]);
-      })
-    );
-    this.sauce.getUserSauces();
+    this.sauces$ = this.SaucesService.getAllSauces().pipe(
+          tap(() => {
+            this.loading = false
+          }),
+          catchError(err => {
+            this.loading = false;
+            return throwError(() => err);
+          })
+        );
   }
 
   onClickSauce(id: string) {

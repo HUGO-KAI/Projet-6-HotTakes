@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { SauceListComponent } from './sauce-list/sauce-list.component';
+import { MySauceListComponent } from './my-sauce-list/my-sauce-list.component';
 import { SauceFormComponent } from './sauce-form/sauce-form.component';
 import { SingleSauceComponent } from './single-sauce/single-sauce.component';
 import { SignupComponent } from './auth/signup/signup.component';
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: 'signup', component: SignupComponent },
   { path: 'login', component: LoginComponent },
   { path: 'sauces', component: SauceListComponent, canActivate: [AuthGuard] },
+  { path: 'my-sauces', component: MySauceListComponent, canActivate: [AuthGuard] },
   { path: 'sauce/:id', component: SingleSauceComponent},
   { path: 'new-sauce', component: SauceFormComponent, canActivate: [AuthGuard] },
   { path: 'modify-sauce/:id', component: SauceFormComponent, canActivate: [AuthGuard] },

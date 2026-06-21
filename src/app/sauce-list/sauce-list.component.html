@@ -3,7 +3,7 @@
   <p *ngIf="!loading && sauces.length <= 0">
     No sauces to display! Add your first sauce by clicking on the "Add Sauce" button in the navigation bar.
   </p>
-  <p class="list-title" *ngIf="!loading && sauces.length > 0">THE SAUCES</p>
+  <p class="list-title" *ngIf="!loading && sauces.length > 0">ALL SAUCES</p>
   <div class="sauce-list" *ngIf="!loading && sauces.length  > 0">
     <div class="sauce-list-item" *ngFor="let sauce of sauces" (click)="onClickSauce(sauce.id)">
       <img alt="Hot sauce bottle" [src]="sauce.imageUrl">

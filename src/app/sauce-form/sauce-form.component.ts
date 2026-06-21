@@ -99,7 +99,7 @@ export class SauceFormComponent implements OnInit {
       this.sauces.createSauce(newSauce, this.sauceForm.get('image')!.value).pipe(
         tap(({ message }) => {
           this.loading = false;
-          this.router.navigate(['/sauces']);
+          this.router.navigate(['my-sauces']);
         }),
         catchError(error => {
           console.error(error);
@@ -112,7 +112,7 @@ export class SauceFormComponent implements OnInit {
       this.sauces.modifySauce(this.sauce.id, newSauce, this.sauceForm.get('image')!.value).pipe(
         tap(({ message }) => {
           this.loading = false;
-          this.router.navigate(['/sauces']);
+          this.router.navigate(['/my-sauces']);
         }),
         catchError(error => {
           console.error(error);

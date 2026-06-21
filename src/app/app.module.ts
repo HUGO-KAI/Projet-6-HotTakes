@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { LoginComponent } from './auth/login/login.component';
 import { SauceListComponent } from './sauce-list/sauce-list.component';
+import { MySauceListComponent } from './my-sauce-list/my-sauce-list.component';
 import { SingleSauceComponent } from './single-sauce/single-sauce.component';
 import { SauceFormComponent } from './sauce-form/sauce-form.component';
 import { HeaderComponent } from './header/header.component';
@@ -24,7 +25,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     SauceListComponent,
     SingleSauceComponent,
     SauceFormComponent,
-    HeaderComponent
+    HeaderComponent,
+    MySauceListComponent
   ],
   imports: [
     BrowserModule,
